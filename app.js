@@ -1,12 +1,8 @@
-"use strict"
+var app = require('./config/app_config');
+var ui5Router = require('./ui5/ui5Router'); 
 
-var express = require('express');
-var app = express();
-var bodyParser = require('body-parser');
-app.use(bodyParser.json());
+app.get('/', function(req, res){
+    res.end('Bem-vindo a API NEMSSQLO (Node, Express, MS SQL, OpenUI5) stack sample app');
+});
 
-// adds the routes for ui5
-var ui5Router = require('./ui5/ui5Router');
-app.use('/ui5/', ui5Router.getRouter());
-
-app.listen(process.env.PORT || 8082)
+app.use('/ui5/', ui5Router.getRouter()); // adds the routes for ui5
