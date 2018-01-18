@@ -1,25 +1,24 @@
 <mvc:View 
-	xmlns:core="sap.ui.core" 
 	xmlns:mvc="sap.ui.core.mvc" 
-	xmlns="sap.m" 
-	xmlns:html="http://www.w3.org/1999/xhtml" 
-	controllerName="ui5.fiscal.controller.S0">
+	xmlns="sap.tnt" 
+	xmlns:m="sap.m" 
+	controllerName="ui5.fiscal.controller.S0" height="100%">
 	
-	<App>
-		<pages>
-			<Page title="luizalabs - Fiscal NFe">
-				<content>
-					<!--<Input id="name" placeholder="Nome"/>-->
-				</content>
-				<footer>
-					<Toolbar>
-						<content>
-							<!--<Input id="toolbar" />-->
-							<!--<Button text="Estou no ToolBar" tooltip="ma oe" type="Back"/>-->
-						</content>
-					</Toolbar>
-				</footer>
-			</Page>
-		</pages>
-	</App>
+	<m:Button icon="sap-icon://menu2" 
+			  press="onCollapseExpandPress"/>
+			
+	<NavigationList id="navigationList" width="320px">
+		<NavigationListItem text="{i18n>navListItemNfe}" icon="sap-icon://bar-code">
+			<NavigationListItem text="{i18n>navListaDocFinPorPeriodoTipoDoc}"/>
+			<NavigationListItem text="{i18n>navListaDocFinPorChaneNFe}"/>
+			<NavigationListItem text="{i18n>navListaDocFinPorDocDestinatario}"/>
+			<NavigationListItem text="{i18n>navListaTotalMvtoPorPeriodoTipoDoc}"/>
+			<NavigationListItem text="{i18n>navListaDocFinPorStatus}"/>
+			<NavigationListItem text="{i18n>navListaDocFinETransacoes}"/>
+		</NavigationListItem>
+		<NavigationListItem text="{i18n>navListItemNfeTran}" icon="sap-icon://it-host">
+			<NavigationListItem text="{i18n>navListaTransacoesComSefaz}"/>
+		</NavigationListItem>
+	</NavigationList>
+	
 </mvc:View>

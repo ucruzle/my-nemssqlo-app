@@ -35,5 +35,11 @@ sap.ui.define(["sap/ui/core/mvc/Controller"], function(Controller) {
 		/**
 		 *@memberOf ui5.fiscal.controller.S0
 		 */
+		onCollapseExpandPress: function() {
+			var oNavigationList = this.getView().byId('navigationList');
+			var bExpanded = oNavigationList.getExpanded();
+
+			oNavigationList.setExpanded(!bExpanded);
+		}
 	});
 });
